@@ -1,0 +1,272 @@
+/* -------------------------------------- */
+/* 1. Global Reset, Fonts, and Transitions */
+/* -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&family=Leckerli+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Knewave&family=Leckerli+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out; 
+    color: #FFF; /* Default all text to white */
+}
+
+/* Ensure HTML and Body cover the whole viewport */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* -------------------------------------- */
+/* 2. BODY & CONTAINER (The Space Theme Layer) */
+/* -------------------------------------- */
+
+body {
+    min-height: 100vh;
+    /* FIX: ACTIVATED THE SPACE GRADIENT BACKGROUND */
+    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+    overflow: hidden; 
+    font-family: 'Leckerli One', cursive; 
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: transparent; /* Allows stars to show through */
+    z-index: 10; 
+    position: relative; 
+}
+
+
+/* -------------------------------------- */
+/* 3. STAR & ANIMATION STYLES (Complete) */
+/* -------------------------------------- */
+
+.stars, .stars::after, .shooting-star {
+    z-index: 1; 
+    position: absolute; 
+}
+
+.stars {
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+    animation: twinkle 8s infinite linear;
+}
+
+/* Additional twinkling stars with different animation timing */
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+    animation: twinkle 6s infinite linear reverse;
+}
+
+.shooting-star {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
+}
+
+.shooting-star:nth-child(2) { top: 20%; left: -100px; animation-delay: 0s; }
+.shooting-star:nth-child(3) { top: 35%; left: -100px; animation-delay: 1s; }
+.shooting-star:nth-child(4) { top: 50%; left: -100px; animation-delay: 2s; }
+.shooting-star:nth-child(5) { top: 65%; left: -100px; animation-delay: 3s; }
+.shooting-star:nth-child(6) { top: 80%; left: -100px; animation-delay: 4s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+}
+
+@keyframes shoot {
+    0% { transform: translateX(0) translateY(0) rotate(25deg); opacity: 1; }
+    100% { transform: translateX(120vw) translateY(50vh) rotate(25deg); opacity: 0; }
+}
+
+
+/* -------------------------------------- */
+/* 4. CONTENT STYLES (Transparent & White Text) */
+/* -------------------------------------- */
+
+.sidebar {
+    width: 10vw; /* Fixed sizing */
+    background: transparent; /* Fixed background */
+    z-index: 20; 
+    position: relative; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    font-size: 20px;
+    height: 100vh;
+    text-align: center;
+    box-shadow: none; 
+}
+
+.main{
+    width: 90vw; /* Fixed sizing */
+    height: 100vh; /* Fixed typo */
+    background-color: transparent; /* Fixed background */
+    z-index: 20; 
+    position: relative;
+    
+  padding-top: 5vh;
+    align-items: center; 
+    padding-left: 5vw; 
+}
+
+.infoContainer{
+    background-color: transparent; /* Fixed background */
+    box-shadow: none; /* Removed shadow that created the white card look */
+    border-radius: 20px; 
+    z-index: 30;
+    position: relative;
+    
+    height: 90vh;
+    width: 70vw;
+    margin: auto; 
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    overflow: hidden; 
+}
+
+/* Sidebar Navigation */
+.sidebar nav { padding-top: 45px; }
+.sidebar nav li {
+    list-style: none;
+    font-size: 30px;
+    padding: 20px 0; 
+    color: #FFF; 
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.7); 
+}
+.sidebar nav li:hover {
+    color: #FFC300; 
+    text-shadow: 0 0 12px #FFD700; 
+}
+.sidebar nav li a { color: #FFF; text-decoration: none; }
+.sidebar nav li a:hover { color: #FFC300; }
+
+/* Text in main area */
+.hello, .name, .about, .moreabout {
+    color: #FFF; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); 
+}
+.moreabout { margin-top: 23px; }
+
+/* FIX: Ensure Goku image wrapper is transparent */
+.devpic, .devpic img {
+    background-color: transparent !important; 
+}
+
+
+/* -------------------------------------- */
+/* 5. Header and Footer (Ensure visibility) */
+/* -------------------------------------- */
+
+.sidebar-header {
+    color: #fff; 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9); 
+    background-color: transparent; 
+    padding: 20px 0; 
+}
+
+.sidebar-footer {
+    color: rgba(255, 255, 255, 0.9); 
+    padding: 10px 0;
+}
+
+/* -------------------------------------- */
+/* 6. Buttons & Other Styles */
+/* -------------------------------------- */
+.buttons button {
+    background-color: rgb(111, 127, 238);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.5); 
+    border-radius: 10px;
+      padding: 9px 14px;
+}
+.buttons button:hover {
+    background-color: #FFC300; 
+    color: rgb(111, 127, 238);
+    box-shadow: 0 0 25px #FFD700; 
+    transform: translateY(-2px);
+}
+.buttons a { text-decoration: none; display: inline-block; }
+
+
+/* Other element styling */
+.devinfo{ display: flex; justify-content: center; flex-direction:column ;}
+.hello{ font-size: 85px;}
+.name{ font-size: 70px; font-weight: bold ; font-family: 'Knewave', cursive;}
+.about{ font-size: 50px;}
+.blogitem{ margin: 20px; font-family: "Leckerli One", cursive;}
+.intro{ font-family: "Leckerli One", cursive;display: block;;}
+.intro h2, .intro p{ margin: 12px; font-family: "Leckerli One", cursive;}
+.skillcontainer { padding: 12px;width: 100%; display: flex; flex-wrap: wrap; gap: 10px; }
+.skillitem{ display: flex; height: 150px; width: 150px; border-radius: 10px; margin: 20px; justify-content: center;align-items: center; border: 1px solid #FFF;}
+.skillitem img{ height: 100%; width: 100%; object-fit: contain; display: block;flex-direction: column;}
+.skill{ width: 23px; height: 23px;}
+.contactform{ padding: 0 34px; padding-top: 144px; font-family: "Leckerli One", cursive;}
+.contactform h1{ font-family: "Leckerli One", cursive; padding: 12px 0;}
+.contactform form div{ padding: 10px 0; display: flex; flex-direction: column;}
+/* Update .contactform form div input (around line 364) */
+.contactform form div input {
+    width: 16vw;
+    border-radius: 5px;
+    margin: 6px 0;
+    padding: 3px;
+    /* FIX: Set a dark background and white text for inputs */
+    background-color: #333; /* Dark gray background */
+    color: #FFF; /* White text for visibility */
+    border: 1px solid #777;
+} /* Input text must be black to be visible */
+#emailHelp{ font-size: 8px; color: #BBB; margin: 0 5px;}
+.form-check{ flex-direction: row;}
+#form-check input{ width: 24px; margin: 3px 0;}
+.blogitem p{ font-family: "Leckerli One", cursive;}
+/* Update .btn-sm (around line 386) */
+.btn-sm {
+    font-size: 10px;
+    padding: 7px 13px;
+    margin: 10px 0;
+    /* FIX: Use the space theme colors */
+    background-color: rgb(111, 127, 238); /* Deep Blue */
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(111, 127, 238, 0.5); /* Subtle glow */
+}
+
+/* FIX: Ensure hover works */
+.btn-sm:hover {
+    background-color: #FFC300; /* Gold */
+    color: rgb(111, 127, 238); /* Blue text */
+    box-shadow: 0 0 15px #FFD700;
+}
