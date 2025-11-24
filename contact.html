@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PD PORTFOLIO</title>
     <link rel="stylesheet" href="styles.css">
+    <base href="/portfolio/">
+    
 </head>
 <body>
     <div class="container">
@@ -12,10 +14,10 @@
         
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/intro.html">My Intro</a></li>
-            
-                <li><a href="/contact.html">Contact</a></li>
+              
+<li><a href="index.html">Home</a></li>
+<li><a href="intro.html">My Intro</a></li>
+<li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -26,29 +28,26 @@
   <div class="form-group">
                         <label for="clientemail">Email address</label>
                         <input type="email" id="clientemail" class="form-control">
-                        <!-- Removed the extra div here and used a simple paragraph for help text -->
                         <p id="emailHelp">We'll never share your email and phone with anyone else.</p>
                     </div>
 
-                    <!-- Phone Number Field -->
+                   
                     <div class="form-group">
                         <label for="clientphone">Phone</label>
                         <input type="tel" id="clientphone" class="form-control">
                     </div>
 
-                    <!-- Project Description (Added as it's common for a contact form) -->
                     <div class="form-group">
                         <label for="projectdesc">Project Description</label>
-                        <textarea id="projectdesc" rows="3" class="form-control"></textarea>
+                        <textarea id="projectdesc" rows="3" class="project-field form-control"></textarea>
                     </div>
 
-                    <!-- Checkbox (Using your custom class .form-check) -->
                     <div class="form-check">
                         <input type="checkbox" id="isclient" class="form-check-input">
                         <label for="isclient" class="form-check-label">Work on a project with me!</label>
                     </div>
                     
-                    <!-- Submit Button (Using your custom .btn-sm class) -->
+                   
                     <button type="submit" class="btn-sm">Submit</button>
                 </form>
             </div>
