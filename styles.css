@@ -321,11 +321,13 @@ body {
     color: rgb(111, 127, 238); 
     box-shadow: 0 0 15px #FFD700;
 }
-@media screen and (max-width: 768px) {
+
     
     
+   @media screen and (max-width: 600px) {
+    
+
     .container {
         flex-direction: column;
         height: auto; 
-        min-height: 100vh;
     }
